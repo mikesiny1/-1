@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Varela Round', sans-serif;
+}
+
+@layer base {
+  :root {
+    --gradient-start: #22c55e;
+    --gradient-end: #059669;
+  }
+}
+
+@layer components {
+  .checkbox-container {
+    @apply relative flex items-center;
+  }
+  
+  .checkbox-container input[type="checkbox"] {
+    @apply absolute opacity-0 w-0 h-0;
+  }
+  
+  .checkbox-container .checkmark {
+    @apply w-5 h-5 rounded-full border-2 border-gray-300 transition-colors duration-200;
+  }
+  
+  .checkbox-container input:checked ~ .checkmark {
+    @apply border-green-500 bg-green-500;
+  }
+}
